@@ -1,5 +1,5 @@
-﻿@page
-@model IndexModel
+@page
+@model AdminModel
 @{
     ViewData["Title"] = "Home page";
 }
@@ -23,7 +23,15 @@
             <p><strong>Preço:</strong> @produto.Preco</p>
             <p><strong>Estoque:</strong> @produto.Estoque</p>
             <p><strong>Descrição:</strong> @produto.Descricao</p>
+          <!-- 🔴 FORM DE DELETE -->
+            <form method="post" asp-page-handler="Delete">
+                <input type="hidden" name="id" value="@produto.Id" />
+                <button type="submit">Excluir</button>
+            </form>
+            <form method="get" asp-page="/Editar">
+            <input type="hidden" name="id" value="@produto.Id" />
+                <button type="submit">Editar</button>
+                </form>
         </div>
-    </div>
-    
+    </div>    
 }

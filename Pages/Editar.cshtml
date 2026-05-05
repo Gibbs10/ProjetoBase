@@ -1,0 +1,40 @@
+@page
+@model EditarModel
+
+<h1>Editar Produto</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="Produto.Id" />
+
+    <div>
+        <label>Produto:</label>
+        <input asp-for="Produto.ProdutoNome" />
+    </div>
+
+    <div>
+        <label>Fabricante:</label>
+        <input asp-for="Produto.Fabricante" />
+    </div>
+
+    <div>
+        <label>Preço:</label>
+        <input asp-for="Produto.Preco" />
+    </div>
+
+    <div>
+        <label>Estoque:</label>
+        <input asp-for="Produto.Estoque" />
+    </div>
+
+    <div>
+        <label>Descrição:</label>
+        <textarea asp-for="Produto.Descricao"></textarea>
+    </div>
+
+    <div>
+        <label>Imagem:</label>
+        <input asp-for="Produto.Img"/>
+    </div>
+
+    <button type="submit">Salvar</button>
+</form>

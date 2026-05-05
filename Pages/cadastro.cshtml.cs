@@ -9,7 +9,7 @@ public class CadastroModel (ProdutoRepository repositorio) : PageModel
     {
         return Page();
     }
-
+        
     public IActionResult OnPost(string produtoNome, string fabricante, decimal preco, string descricao, int estoque, string img)
     {
         var produto = new Produto
