@@ -12,9 +12,19 @@
 <p><strong>Estoque:</strong> @Model.produto.Estoque</p>
 </h1> *@
 
-<h1>@Model.produto.ProdutoNome</h1>
-<p><strong>Id:</strong> @Model.produto.Id</p>
-<p><strong>Fabricante:</strong> @Model.produto.Fabricante</p>
-<p><strong>Preço:</strong> @Model.produto.Preco</p>
-<p><strong>Descrição:</strong> @Model.produto.Descricao</p>
-<p><strong>Estoque:</strong> @Model.produto.Estoque</p> 
+@foreach (var produto in Model.Produtos)
+{
+    <div class="produto-card">
+        <img class="img-produto" src="@produto.Img" alt="">
+        <div class="produto-info">
+        <h1>@produto.ProdutoNome</h1>
+            <p><strong>Id:</strong> @produto.Id</p>
+            <p><strong>Fabricante:</strong> @produto.Fabricante</p>
+            <p><strong>Preço:</strong> @produto.Preco</p>
+            <p><strong>Estoque:</strong> @produto.Estoque</p>
+            <p><strong>Descrição:</strong> @produto.Descricao</p>
+        </div>
+    </div>
+    
+}
+

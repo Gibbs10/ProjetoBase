@@ -9,15 +9,15 @@ public class IndexModel : PageModel
 {
     private readonly ProdutoRepository _repositorio;
 
-    public Produto produto { get; set; }
+    public List<Produto> Produtos { get; set; }= new();
 
     public IndexModel(ProdutoRepository repositorio)
     {
         _repositorio = repositorio;
     }
-    public void OnGet()
+    public  void OnGet()
     {
-        produto = _repositorio.GetProduto();
+        Produtos = _repositorio.GetProdutos();
     }
 }
 

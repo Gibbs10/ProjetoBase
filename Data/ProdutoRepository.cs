@@ -1,16 +1,21 @@
 using ProjetoBase.Models;
 
 namespace ProjetoBase.Data;
-
 public class ProdutoRepository
 {
-    private static Produto produto = new Produto {Id=1033, ProdutoNome= "CAFÉ", Fabricante = "Nestlé", Preco= 29.99m, Descricao= " Café Pilão - Pacote de embalagem a vácuo - 500g - Tradicional", Estoque = 100};
-   
+    private readonly AppDbContext _context;
 
-
-    public Produto GetProduto()
+    public ProdutoRepository(AppDbContext context)
     {
-        return produto;
+        _context = context;
+    }
+    public List<Produto> GetProdutos()
+    {
+        return _context.Produtos.ToList();
+    }
+    public void Add(Produto produto)
+    {
+        _context.Produtos.Add(produto);
+        _context.SaveChanges();
     }
 }
-
